@@ -682,4 +682,4 @@ def Update_Averages(value):
         
         return lebron_figure,jordan_figure
     
-app.run_server(debug=True)
+app.run_server(debug=False)
