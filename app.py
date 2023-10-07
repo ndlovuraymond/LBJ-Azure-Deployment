@@ -5,24 +5,29 @@ import plotly.express as px
 import warnings
 warnings.filterwarnings('ignore')
 
+jordan_reg_url = "https://raw.githubusercontent.com/ndlovuraymond/Lebron-vs-Jordan/main/data/jordan_career.csv"
+jordan_playoff_url = "https://raw.githubusercontent.com/ndlovuraymond/Lebron-vs-Jordan/main/data/jordan_playoffs.csv"
+lebron_reg_url = "https://raw.githubusercontent.com/ndlovuraymond/Lebron-vs-Jordan/main/data/lebron_career.csv"
+lebron_playoff_url = "https://raw.githubusercontent.com/ndlovuraymond/Lebron-vs-Jordan/main/data/lebron_playoffs.csv"
+
 #regular season import
-lebron_regular_season = pd.read_csv("assets/data/lebron_career.csv",parse_dates=["date"])
+lebron_regular_season = pd.read_csv(lebron_reg_url,parse_dates=["date"])
 lebron_totals_regular = lebron_regular_season[["pts","ast","trb","blk","stl","tov"]].sum().to_frame()
 lebron_totals_regular.rename(columns={lebron_totals_regular.columns[0]:"Total"},inplace=True)
 lebron_averages_regular = lebron_regular_season[["pts","ast","trb","blk","stl","tov"]].mean().to_frame()
 lebron_averages_regular.rename(columns={lebron_averages_regular.columns[0]:"Total"},inplace=True)
-jordan_regular_season = pd.read_csv("assets/data/jordan_career.csv",parse_dates=["date"])
+jordan_regular_season = pd.read_csv(jordan_reg_url,parse_dates=["date"])
 jordan_totals_regular = jordan_regular_season[["pts","ast","trb","blk","stl","tov"]].sum().to_frame()
 jordan_totals_regular.rename(columns={jordan_totals_regular.columns[0]:"Total"},inplace=True)
 jordan_averages_regular = jordan_regular_season[["pts","ast","trb","blk","stl","tov"]].mean().to_frame()
 jordan_averages_regular.rename(columns={jordan_averages_regular.columns[0]:"Total"},inplace=True)
 #playoffs import
-lebron_playoffs = pd.read_csv("assets/data/lebron_playoffs.csv",parse_dates=["date"])
+lebron_playoffs = pd.read_csv(lebron_playoff_url,parse_dates=["date"])
 lebron_totals_playoffs = lebron_playoffs[["pts","ast","trb","blk","stl","tov"]].sum().to_frame()
 lebron_totals_playoffs.rename(columns={lebron_totals_playoffs.columns[0]:"Total"},inplace=True)
 lebron_averages_playoffs = lebron_playoffs[["pts","ast","trb","blk","stl","tov"]].mean().to_frame()
 lebron_averages_playoffs.rename(columns={lebron_averages_playoffs.columns[0]:"Total"},inplace=True)
-jordan_playoffs = pd.read_csv("assets/data/jordan_playoffs.csv",parse_dates=["date"])
+jordan_playoffs = pd.read_csv(jordan_playoff_url,parse_dates=["date"])
 jordan_totals_playoffs = jordan_playoffs[["pts","ast","trb","blk","stl","tov"]].sum().to_frame()
 jordan_totals_playoffs.rename(columns={jordan_totals_playoffs.columns[0]:"Total"},inplace=True)
 jordan_averages_playoffs = jordan_playoffs[["pts","ast","trb","blk","stl","tov"]].mean().to_frame()
