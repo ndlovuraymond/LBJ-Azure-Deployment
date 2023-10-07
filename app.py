@@ -119,6 +119,7 @@ jordan_shooting_totals_finals.rename(columns={jordan_shooting_totals_finals.colu
                                               inplace=True)
 
 app = Dash(__name__)
+server = app.server
 
 app.layout = html.Div(
 children=[
@@ -686,4 +687,4 @@ def Update_Averages(value):
         
         return lebron_figure,jordan_figure
     
-app.run_server(debug=True)
+app.run_server(debug=False)
