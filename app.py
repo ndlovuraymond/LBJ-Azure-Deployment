@@ -687,4 +687,5 @@ def Update_Averages(value):
         
         return lebron_figure,jordan_figure
     
-app.run_server(debug=False)
+if __name__ == "__main__":
+    app.run_server(debug=False)
